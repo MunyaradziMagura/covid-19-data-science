@@ -20,6 +20,5 @@ plot_ly(
                                     xaxis = list(title = list(text ='Date', font = "Helvetica")),
                                     yaxis = list(title = list(text ='Number of Cases', font = "Helvetica")),
                                     plot_bgcolor='#e5ecf6')
-  )
 
 
