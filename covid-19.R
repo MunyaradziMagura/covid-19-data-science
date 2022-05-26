@@ -1,7 +1,7 @@
 library("dplyr")
-library(ggplot2)
-library(plotly)
-data_frame <- read.csv( "../owid-covid-data.csv", header = TRUE, sep = ",")
+library("ggplot2")
+library("plotly")
+data_frame <- read.csv( "owid-covid-data.csv", header = TRUE, sep = ",")
 
 data_frame[is.na(data_frame)] <- 0 # replace NA with 0
 
@@ -15,9 +15,11 @@ plot_ly(
   color = ~location,
   type = "scatter",
   mode = "lines+markers",
-  line = list(width = 4))%>% 
-  layout(title= list(text = "Total numbers of COVID-19 cases",font = "Helvetica"), font="Helvetica", 
-         legend=list(title=list(text='Countries',font = "Helvetica")), 
-         xaxis = list(title = list(text ='Date', font = "Helvetica")),
-         yaxis = list(title = list(text ='Number of Cases', font = "Helvetica"))
-         )
+  line = list(width = 4))%>% layout(title= list(text = "Total numbers of COVID-19 cases",font = "Helvetica"), font=t, 
+                                    legend=list(title=list(text='Countries',font = "Helvetica")), 
+                                    xaxis = list(title = list(text ='Date', font = "Helvetica")),
+                                    yaxis = list(title = list(text ='Number of Cases', font = "Helvetica")),
+                                    plot_bgcolor='#e5ecf6')
+  )
+
+
