@@ -23,7 +23,9 @@ plot_ly(
             legend=list(title=list(text='Countries',font = "Helvetica")), 
             xaxis = list(title = list(text ='Countries', font = "Helvetica")),
             yaxis = list(title = list(text ='Number of Cases', font = "Helvetica")),
-            plot_bgcolor='#e5ecf6')
+            plot_bgcolor='#e5ecf6')%>% add_bars(
+              width = ~1
+            )
 
 
 # cases line graph 
@@ -39,6 +41,21 @@ plot_ly(
                                     xaxis = list(title = list(text ='Date', font = "Helvetica")),
                                     yaxis = list(title = list(text ='Number of Cases', font = "Helvetica"), type = "log"),
                                     plot_bgcolor='#e5ecf6')
+
+
+
+# QUESTION 3
+countryGdp <- data_frame[data_frame$gdp_per_capita > 0,] %>% select(gdp_per_capita,new_cases_per_million,new_deaths_per_million, date ) 
+countryGdp$date <- strftime(countryGdp$date, "%m") # get month only
+countryGdp <- countryGdp %>% group_by(date,gdp_per_capita) %>% summarise(cases = sum(new_cases_per_million), deaths = sum(new_deaths_per_million))
+
+
+countryGdp <- distinct(countryGdp, gdp_per_capita, .keep_all = TRUE) # 
+countryGdpQuantile <-  unname(quantile(countryGdp$gdp_per_capita)) # get quantile
+countryGdpQuantile
+
+
+# QUESTION 4
 
 
 
@@ -58,8 +75,7 @@ plot_ly(
   y = ~excess_mortality,
   color = ~excess_mortality,
   type = "scatter",
-  mode = "lines+markers")%>% layout(shapes = list(list(type = "rect",line = list(color = "black"),
-                                      x0 = "2020-10", x1 = "2021-10", y0 = 0, y1= 9000), plot_bgcolor = "#e5ecf6") # get max value 
+  mode = "lines+markers")
 
  
 
