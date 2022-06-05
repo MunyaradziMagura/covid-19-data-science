@@ -87,7 +87,7 @@ plot_ly(countryWealthDeath, x = ~date, y = ~lowDeath, type = 'scatter', mode = "
 
 
 
-# QUESTION 4
+# GDP countries: Cardiovasc v Covid 19 Death Rate
 
 plot_ly(lowDeath, x = ~date, y = ~lowDeath, type = 'scatter', mode = "lines+markers", name = 'Covid 19') %>% 
   add_trace(y = ~cardiovasc, name = 'Cardiovasc', mode = 'lines+markers')%>% layout(title= list(text = "Low GDP countries: Cardiovasc v Covid 19 Death Rate",font = "Helvetica"), font=t, 
@@ -111,22 +111,6 @@ plot_ly(highDeath, x = ~date, y = ~highDeath, type = 'scatter', mode = "lines+ma
                                                                                           plot_bgcolor='#e5ecf6')
 
 #############################################################################################################################
-
-
-cardiovasc <- cardiovasc %>% group_by(date) %>% summarise(cardiovasc = max(cardiovasc_death_rate))
-# inner join to get cardiovasc_death_rate per year 
-
-
-
-
-lowCardiovasc <- semi_join(lowCardiovasc, cardiovasc_death_rate, 
-                            by = c("date" =  "date")) %>% group_by(date) 
-
-
-
-
-
-
 
 
 # QUESTION 5
