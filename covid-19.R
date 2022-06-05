@@ -89,25 +89,25 @@ plot_ly(countryWealthDeath, x = ~date, y = ~lowDeath, type = 'scatter', mode = "
 
 # QUESTION 4
 
-plot_ly(lowDeath, x = ~date, y = ~lowDeath, type = 'scatter', mode = "lines+markers", name = 'Covid Death rate') %>% 
-  add_trace(y = ~cardiovasc, name = 'Cardiovasc Death rate', mode = 'lines+markers')%>% layout(title= list(text = "Low GDP countries: Cardiovasc Death rate",font = "Helvetica"), font=t, 
-                                                                                 legend=list(title=list(text='Death Type',font = "Helvetica")), 
+plot_ly(lowDeath, x = ~date, y = ~lowDeath, type = 'scatter', mode = "lines+markers", name = 'Covid 19') %>% 
+  add_trace(y = ~cardiovasc, name = 'Cardiovasc', mode = 'lines+markers')%>% layout(title= list(text = "Low GDP countries: Cardiovasc v Covid 19 Death Rate",font = "Helvetica"), font=t, 
+                                                                                 legend=list(title=list(text='Death rate',font = "Helvetica")), 
                                                                                  xaxis = list(title = list(text ='Date', font = "Helvetica")),
-                                                                                 yaxis = list(title = list(text ='deaths per 100k', font = "Helvetica")),
+                                                                                 yaxis = list(title = list(text ='Deaths per 100k', font = "Helvetica")),
                                                                                  plot_bgcolor='#e5ecf6')
 
-plot_ly(averageDeath, x = ~date, y = ~averageDeath, type = 'scatter', mode = "lines+markers", name = 'Covid Death rate') %>% 
-  add_trace(y = ~cardiovasc, name = 'Cardiovasc Death rate', mode = 'lines+markers')%>% layout(title= list(text = "Average GDP countries: Cardiovasc Death rate",font = "Helvetica"), font=t, 
-                                                                                          legend=list(title=list(text='Death Type',font = "Helvetica")), 
+plot_ly(averageDeath, x = ~date, y = ~averageDeath, type = 'scatter', mode = "lines+markers", name = 'Covid 19') %>% 
+  add_trace(y = ~cardiovasc, name = 'Cardiovasc', mode = 'lines+markers')%>% layout(title= list(text = "Average GDP countries: Cardiovasc v Covid 19 Death Rate",font = "Helvetica"), font=t, 
+                                                                                          legend=list(title=list(text='Death rate',font = "Helvetica")), 
                                                                                           xaxis = list(title = list(text ='Date', font = "Helvetica")),
-                                                                                          yaxis = list(title = list(text ='deaths per 100k', font = "Helvetica")),
+                                                                                          yaxis = list(title = list(text ='Deaths per 100k', font = "Helvetica")),
                                                                                           plot_bgcolor='#e5ecf6')
 
-plot_ly(highDeath, x = ~date, y = ~highDeath, type = 'scatter', mode = "lines+markers", name = 'Covid Death rate') %>% 
-  add_trace(y = ~cardiovasc, name = 'Cardiovasc Death rate', mode = 'lines+markers')%>% layout(title= list(text = "High GDP countries: Cardiovasc Death rate",font = "Helvetica"), font=t, 
-                                                                                          legend=list(title=list(text='Death Type',font = "Helvetica")), 
+plot_ly(highDeath, x = ~date, y = ~highDeath, type = 'scatter', mode = "lines+markers", name = 'Covid 19') %>% 
+  add_trace(y = ~cardiovasc, name = 'Cardiovasc', mode = 'lines+markers')%>% layout(title= list(text = "High GDP countries: Cardiovasc v Covid 19 Death Rate",font = "Helvetica"), font=t, 
+                                                                                          legend=list(title=list(text='Death rate',font = "Helvetica")), 
                                                                                           xaxis = list(title = list(text ='Date', font = "Helvetica")),
-                                                                                          yaxis = list(title = list(text ='deaths per 100k', font = "Helvetica")),
+                                                                                          yaxis = list(title = list(text ='Deaths per 100k', font = "Helvetica")),
                                                                                           plot_bgcolor='#e5ecf6')
 
 #############################################################################################################################
